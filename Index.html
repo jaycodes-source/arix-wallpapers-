@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#09090d">
+  <meta name="description" content="Discover, preview, and download stunning HD and 4K wallpapers with ARIX Wallpapers.">
+  <meta name="color-scheme" content="dark">
+
+  <title>ARIX Wallpapers — Your Screen, Reimagined</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="manifest.json">
+
+  <script src="assets/js/wallpapers.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="ARIX Wallpapers home">
+        <img
+          class="brand-logo"
+          src="assets/images/logo.svg"
+          alt=""
+          width="38"
+          height="38"
+        >
+        <span class="brand-name">ARIX<span>WALLPAPERS</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home">Explore</a>
+        <a class="nav-link" href="#categories">Categories</a>
+        <a class="nav-link" href="#wallpaper-gallery">Wallpapers</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="icon-button"
+          id="favorites-toggle"
+          type="button"
+          aria-label="Show favorites"
+          title="Favorites"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/>
+          </svg>
+        </button>
+
+        <button class="profile-button" id="profile-button" type="button">
+          <span class="profile-avatar">A</span>
+          <span class="profile-label">My space</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            YOUR NEXT SCREEN STARTS HERE
+          </div>
+
+          <h1>
+            Make your screen
+            <span class="gradient-text">feel different.</span>
+          </h1>
+
+          <p class="hero-description">
+            Discover wallpapers that match your world.
+            From dark minimalism to breathtaking galaxies,
+            find the image your screen deserves.
+          </p>
+
+          <a class="primary-button" href="#wallpaper-gallery">
+            Explore wallpapers
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>8</strong>
+              <span>Collections</span>
+            </div>
+            <span class="stat-divider"></span>
+            <div class="stat">
+              <strong>HD+</strong>
+              <span>Visual quality</span>
+            </div>
+            <span class="stat-divider"></span>
+            <div class="stat">
+              <strong>Free</strong>
+              <span>To explore</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Featured wallpaper artwork">
+          <div class="hero-orbit hero-orbit-one"></div>
+          <div class="hero-orbit hero-orbit-two"></div>
+          <div class="hero-glow"></div>
+
+          <div class="hero-image-card hero-image-back">
+            <img
+              src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=600&q=85"
+              alt="Stars and distant galaxies"
+              fetchpriority="low"
+            >
+          </div>
+
+          <div class="hero-image-card hero-image-front">
+            <img
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=90"
+              alt="Dramatic mountain landscape"
+              fetchpriority="high"
+            >
+            <div class="hero-image-overlay">
+              <span class="image-tag">EDITOR'S PICK</span>
+              <strong>Beyond the ordinary.</strong>
+              <span>Explore the collection</span>
+            </div>
+          </div>
+
+          <div class="floating-label">
+            <span class="floating-label-icon">✦</span>
+            <div>
+              <strong>Find your aesthetic</strong>
+              <span>One screen at a time</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH -->
+      <section class="search-section" aria-label="Search wallpapers">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+
+          <label class="visually-hidden" for="wallpaper-search">
+            Search wallpapers
+          </label>
+
+          <input
+            id="wallpaper-search"
+            type="search"
+            placeholder="Search anime, nature, cars, space..."
+            autocomplete="off"
+          >
+
+          <kbd class="search-shortcut">SEARCH</kbd>
+        </div>
+
+        <p class="search-hint">
+          Find something that feels like you.
+        </p>
+      </section>
+
+      <!-- CATEGORIES -->
+      <section class="categories-section" id="categories">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">CURATED FOR YOU</span>
+            <h2>Explore collections<span class="heading-period">.</span></h2>
+          </div>
+
+          <span class="section-side-note">Find your aesthetic</span>
+        </div>
+
+        <div class="category-list" id="category-list">
+          <button
+            class="category-chip active"
+            type="button"
+            data-category="all"
+            aria-pressed="true"
+          >
+            <span class="category-symbol">✦</span>
+            All wallpapers
+          </button>
+
+          <button
+            class="category-chip"
+            type="button"
+            data-category="anime"
+            aria-pressed="false"
+          >
+            <span class="category-symbol">◈</span>
+            Anime
+          </button>
+
+          <button
+            class="category-chip"
+            type="button"
+            data-category="dark"
+            aria-pressed="false"
+          >
+            <span class="category-symbol">◐</span>
+            Dark aesthetic
+          </button>
+
+          <button
+            class="category-chip"
+            type="button"
+            data-category="nature"
+            aria-pressed="false"
+          >
+            <span class="category-symbol">❋</span>
+            Nature
+          </button>
+
+          <button
+            class="category-chip"
+            type="button"
+            data-category="cars"
+            aria-pressed="false"
+          >
+            <span class="category-symbol">↗</span>
+            Cars
+          </button>
+
+          <button
+            class="category-chip"
+            type="button"
+            data-category="amoled"
+            aria-pressed="false"
+          >
+            <span class="category-symbol">◉</span>
+            AMOLED
+          </button>
+
+          <button
+            class="category-chip"
+            type="button"
+            data-category="gaming"
+            aria-pressed="false"
+          >
+            <span class="category-symbol">⌘</span>
+            Gaming
+          </button>
+
+          <button
+            class="category-chip"
+            type="button"
+            data-category="movies"
+            aria-pressed="false"
+          >
+            <span class="category-symbol">▣</span>
+            Movies & heroes
+          </button>
+
+          <button
+            class="category-chip"
+            type="button"
+            data-category="space"
+            aria-pressed="false"
+          >
+            <span class="category-symbol">✧</span>
+            Space
+          </button>
+        </div>
+      </section>
+
+      <!-- WALLPAPER GALLERY -->
+      <section class="gallery-section" id="wallpaper-gallery">
+        <div class="section-heading gallery-heading">
+          <div>
+            <span class="section-kicker" id="gallery-kicker">
+              THE ARIX COLLECTION
+            </span>
+            <h2 id="gallery-title">
+              Wallpapers<span class="heading-period">.</span>
+            </h2>
+            <p class="gallery-description" id="gallery-description">
+              Carefully selected visuals for your everyday screen.
+            </p>
+          </div>
+
+          <div class="gallery-controls">
+            <label class="visually-hidden" for="orientation-filter">
+              Filter wallpaper orientation
+            </label>
+
+            <select id="orientation-filter" class="select-control">
+              <option value="all">All sizes</option>
+              <option value="portrait">Portrait</option>
+              <option value="landscape">Landscape</option>
+              <option value="square">Square</option>
+            </select>
+
+            <label class="visually-hidden" for="sort-filter">
+              Sort wallpapers
+            </label>
+
+            <select id="sort-filter" class="select-control">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="title">A–Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="active-filter-row">
+          <span id="results-count" aria-live="polite">
+            Discover wallpapers
+          </span>
+
+          <button
+            id="clear-filters"
+            class="text-button"
+            type="button"
+            hidden
+          >
+            Clear filters
+          </button>
+        </div>
+
+        <div
+          class="wallpaper-grid"
+          id="wallpaper-grid"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <!-- Wallpaper cards are generated by assets/js/app.js -->
+          <div class="gallery-loading">
+            <span class="loading-spinner"></span>
+            <p>Preparing your collection...</p>
+          </div>
+        </div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-state-icon">⌕</div>
+          <h3>No wallpapers found</h3>
+          <p>Try another search or choose a different category.</p>
+          <button class="secondary-button" id="reset-gallery" type="button">
+            Show all wallpapers
+          </button>
+        </div>
+
+        <div class="gallery-footer">
+          <span>YOUR SCREEN. YOUR STYLE. <strong>ARIX.</strong></span>
+          <a href="#home" class="back-to-top">
+            Back to top ↑
+          </a>
+        </div>
+      </section>
+
+      <!-- PERSONAL LIBRARY -->
+      <section class="library-banner" id="my-library">
+        <div class="library-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12l6 6v10a2 2 0 0 1-2 2Z"/>
+            <path d="M16 3v6h6M8 13h8M8 17h8"/>
+          </svg>
+        </div>
+
+        <div class="library-copy">
+          <span class="section-kicker">YOUR PERSONAL SPACE</span>
+          <h2>Your collection, your rules.</h2>
+          <p>
+            Save your favourite wallpapers and keep the ones you love close.
+          </p>
+        </div>
+
+        <button class="secondary-button" id="library-button" type="button">
+          View favourites
+          <span aria-hidden="true">→</span>
+        </button>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <a class="footer-brand" href="#home">
+        <img
+          src="assets/images/logo.svg"
+          alt=""
+          width="30"
+          height="30"
+          loading="lazy"
+        >
+        <span>ARIX<span>WALLPAPERS</span></span>
+      </a>
+
+      <p>Made for screens that deserve more.</p>
+
+      <div class="footer-bottom">
+        <span>© <span id="current-year">2026</span> ARIX Wallpapers</span>
+        <a href="#home">Back to the beginning ↑</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- WALLPAPER PREVIEW DIALOG -->
+  <dialog class="preview-dialog" id="preview-dialog">
+    <div class="preview-layout">
+      <div class="preview-image-wrap">
+        <button
+          class="dialog-close"
+          id="close-preview"
+          type="button"
+          aria-label="Close wallpaper preview"
+        >
+          ×
+        </button>
+
+        <img id="preview-image" src="" alt="Selected wallpaper">
+      </div>
+
+      <div class="preview-details">
+        <span class="section-kicker">WALLPAPER DETAILS</span>
+        <h2 id="preview-title">Wallpaper title</h2>
+        <p id="preview-category">Category</p>
+
+        <div class="preview-meta">
+          <span id="preview-resolution">High quality</span>
+          <span id="preview-orientation">Wallpaper</span>
+        </div>
+
+        <div class="preview-actions">
+          <button
+            class="primary-button download-button"
+            id="download-wallpaper"
+            type="button"
+          >
+            Download wallpaper ↓
+          </button>
+
+          <button
+            class="secondary-button"
+            id="preview-favorite"
+            type="button"
+          >
+            ♡ Save to favourites
+          </button>
+        </div>
+
+        <p class="preview-note">
+          Image availability and download behaviour depend on the source.
+        </p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- JAVASCRIPT MESSAGE / TOAST -->
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <!-- MOBILE NAVIGATION -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+    <a class="mobile-nav-item active" href="#home">
+      <span aria-hidden="true">⌂</span>
+      <span>Home</span>
+    </a>
+
+    <a class="mobile-nav-item" href="#categories">
+      <span aria-hidden="true">◈</span>
+      <span>Explore</span>
+    </a>
+
+    <button class="mobile-nav-item" id="mobile-favorites" type="button">
+      <span aria-hidden="true">♡</span>
+      <span>Saved</span>
+    </button>
+
+    <a class="mobile-nav-item" href="#wallpaper-gallery">
+      <span aria-hidden="true">▦</span>
+      <span>Gallery</span>
+    </a>
+  </nav>
+</body>
+    </html>
