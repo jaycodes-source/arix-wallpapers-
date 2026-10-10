@@ -1,0 +1,1268 @@
+
+/* =========================================
+   ARIX WALLPAPERS
+   CSS PART 1 OF 4
+   Foundation, Header, Hero and Search
+========================================= */
+
+:root {
+  --bg: #08080d;
+  --surface: #14141e;
+  --surface-light: #1e1e2b;
+  --text: #f5f3ff;
+  --muted: #a09db2;
+  --accent: #a78bfa;
+  --border: rgba(255, 255, 255, 0.09);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(1240px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+/* HEADER */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 8, 13, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand-name span {
+  color: var(--accent);
+}
+
+.desktop-nav,
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-link {
+  color: var(--muted);
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--accent);
+}
+
+.icon-button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.icon-button:hover {
+  border-color: var(--accent);
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.primary-button {
+  background: var(--accent);
+  color: #151020;
+}
+
+.primary-button:hover {
+  background: #c4b5fd;
+}
+
+.secondary-button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.secondary-button:hover {
+  border-color: var(--accent);
+}
+
+/* HERO SECTION */
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 390px;
+  align-items: center;
+  overflow: hidden;
+  padding-block: 55px;
+  isolation: isolate;
+}
+
+.hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #08080d 0%,
+      rgba(8, 8, 13, 0.85) 45%,
+      rgba(8, 8, 13, 0.25)
+    ),
+    url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=85")
+      center / cover no-repeat;
+  content: "";
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 680px;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin-bottom: 18px;
+  font-size: clamp(38px, 6vw, 66px);
+  font-weight: 850;
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  color: var(--accent);
+}
+
+.hero-description {
+  max-width: 520px;
+  margin-bottom: 24px;
+  color: #c2bfd1;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat strong {
+  font-size: 19px;
+}
+
+.hero-stat span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* SEARCH BAR */
+
+.search-section {
+  position: relative;
+  z-index: 2;
+  margin-top: -22px;
+}
+
+.search-box {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 17px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: #14141e;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+}
+
+.search-box input::placeholder {
+  color: var(--muted);
+}
+
+.search-box input:focus {
+  outline: none;
+}
+
+/* =========================================
+   ARIX WALLPAPERS
+   CSS PART 2 OF 4
+   Categories, Gallery and Wallpaper Cards
+========================================= */
+
+/* GENERAL SECTIONS */
+
+.section {
+  padding: 42px 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.section-title {
+  font-size: clamp(23px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.section-description,
+.gallery-description {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* CATEGORY FILTERS */
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.category-chip {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--surface);
+  color: #c5c1d5;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.category-chip:hover,
+.category-chip.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #151020;
+}
+
+/* GALLERY TOOLBAR */
+
+.gallery-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.gallery-kicker {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.gallery-title {
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.gallery-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.select-control {
+  min-height: 39px;
+  max-width: 180px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.results-count {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* WALLPAPER GRID */
+
+.wallpaper-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px 17px;
+}
+
+.wallpaper-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+  animation: card-appear 0.4s ease both;
+}
+
+.wallpaper-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(167, 139, 250, 0.5);
+}
+
+.wallpaper-image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--surface-light);
+}
+
+.wallpaper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.wallpaper-card:hover .wallpaper-image {
+  transform: scale(1.05);
+}
+
+/* WALLPAPER BADGES */
+
+.wallpaper-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  background: rgba(8, 8, 13, 0.85);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* FAVORITE BUTTON */
+
+.favorite-button {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(8, 8, 13, 0.85);
+  color: #fff;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.08);
+}
+
+.favorite-button.is-favorite {
+  background: #8b5cf6;
+}
+
+/* CARD DETAILS */
+
+.wallpaper-card-content {
+  padding: 14px;
+}
+
+.wallpaper-card-title {
+  overflow: hidden;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wallpaper-card-category {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.wallpaper-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.wallpaper-resolution {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* CARD ACTIONS */
+
+.wallpaper-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.card-preview-button,
+.card-download-button {
+  display: flex;
+  min-width: 0;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 650;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.card-preview-button:hover {
+  border-color: var(--accent);
+  background: rgba(167, 139, 250, 0.08);
+}
+
+.card-download-button {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #151020;
+}
+
+.card-download-button:hover {
+  background: #c4b5fd;
+}
+
+/* EMPTY SEARCH RESULTS */
+
+.empty-state {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-state h3 {
+  margin-bottom: 8px;
+  font-size: 21px;
+}
+
+.empty-state p {
+  max-width: 360px;
+  margin: 0 auto 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* LIBRARY BANNER */
+
+.library-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 32px;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      ellipse at top right,
+      rgba(139, 92, 246, 0.15),
+      transparent 55%
+    ),
+    #14121d;
+}
+
+.library-banner h2 {
+  margin-bottom: 8px;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.3;
+}
+
+.library-banner p {
+  max-width: 540px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* CARD ANIMATION */
+
+@keyframes card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   ARIX WALLPAPERS CSS — PART 3 OF 4
+   Preview Dialog, Toast, Footer and Loading States
+========================================================= */
+
+/* PREVIEW DIALOG */
+
+.preview-dialog {
+  width: min(920px, calc(100% - 28px));
+  max-height: 92vh;
+  padding: 0;
+  overflow: auto;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+}
+
+.preview-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.preview-dialog[open] {
+  animation: dialog-appear 0.25s ease;
+}
+
+.preview-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  min-height: 360px;
+}
+
+.preview-image-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  padding: 18px;
+  background: #090910;
+}
+
+.preview-image {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.preview-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 30px 24px;
+}
+
+.preview-close {
+  align-self: flex-end;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text);
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.preview-close:hover {
+  background: #303044;
+}
+
+.preview-title {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.preview-category {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.preview-information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.preview-info-item {
+  padding: 12px;
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.preview-info-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.preview-info-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.preview-actions .primary-button,
+.preview-actions .secondary-button {
+  flex: 1;
+  justify-content: center;
+}
+
+/* TOAST NOTIFICATIONS */
+
+.toast {
+  position: fixed;
+  z-index: 1000;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(360px, calc(100% - 32px));
+  padding: 14px 18px;
+  color: var(--text);
+  background: #20202e;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* FOOTER */
+
+.site-footer {
+  margin-top: 70px;
+  padding: 35px 0 24px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-brand img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.footer-brand-name {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.footer-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  padding-top: 18px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* LOADING AND INTERACTION STATES */
+
+.loading-placeholder {
+  min-height: 220px;
+  background: linear-gradient(
+    110deg,
+    var(--surface) 8%,
+    var(--surface-light) 18%,
+    var(--surface) 33%
+  );
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s linear infinite;
+  border-radius: var(--radius);
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@keyframes dialog-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes loading-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* =========================================================
+   ARIX WALLPAPERS CSS — PART 4 OF 4
+   Responsive Design, Mobile Navigation and Accessibility
+========================================================= */
+
+/* LARGE TABLETS AND SMALL LAPTOPS */
+
+@media (max-width: 1024px) {
+  .container {
+    width: min(100% - 40px, 1200px);
+  }
+
+  .hero {
+    min-height: 470px;
+  }
+
+  .hero-title {
+    max-width: 650px;
+    font-size: clamp(2.7rem, 6vw, 4.4rem);
+  }
+
+  .wallpaper-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .preview-layout {
+    grid-template-columns: 1fr 0.85fr;
+  }
+}
+
+/* TABLETS */
+
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .header-inner {
+    min-height: 68px;
+    gap: 12px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .hero {
+    min-height: 430px;
+    padding: 65px 0 55px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 8vw, 3.7rem);
+  }
+
+  .hero-description {
+    max-width: 500px;
+    font-size: 0.95rem;
+  }
+
+  .hero-stats {
+    gap: 24px;
+  }
+
+  .section {
+    padding-top: 40px;
+  }
+
+  .wallpaper-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .gallery-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .gallery-controls {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .select-control {
+    flex: 1;
+    min-width: 130px;
+  }
+
+  .preview-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-image-panel {
+    min-height: 260px;
+  }
+
+  .preview-image {
+    max-height: 48vh;
+  }
+
+  .preview-details {
+    padding: 20px;
+  }
+
+  .site-footer {
+    margin-top: 45px;
+  }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .header-inner {
+    min-height: 62px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-logo {
+    width: 31px;
+    height: 31px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .icon-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero {
+    min-height: 400px;
+    padding: 55px 0 45px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+    letter-spacing: -1.2px;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 260px;
+  }
+
+  .hero-actions .primary-button,
+  .hero-actions .secondary-button {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    gap: 18px;
+  }
+
+  .hero-stat strong {
+    font-size: 1.1rem;
+  }
+
+  .hero-stat span {
+    font-size: 0.72rem;
+  }
+
+  .search-section {
+    margin-top: -22px;
+  }
+
+  .search-box {
+    padding: 0 13px;
+  }
+
+  .search-box input {
+    min-width: 0;
+    font-size: 0.88rem;
+  }
+
+  .section {
+    padding-top: 32px;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+  }
+
+  .category-list {
+    gap: 8px;
+  }
+
+  .category-chip {
+    padding: 9px 13px;
+    font-size: 0.8rem;
+  }
+
+  .wallpaper-grid {
+    gap: 10px;
+  }
+
+  .wallpaper-card {
+    border-radius: 14px;
+  }
+
+  .wallpaper-card-content {
+    padding: 10px;
+  }
+
+  .wallpaper-card-title {
+    font-size: 0.9rem;
+  }
+
+  .wallpaper-card-category {
+    font-size: 0.75rem;
+  }
+
+  .wallpaper-card-meta {
+    gap: 5px;
+  }
+
+  .wallpaper-resolution {
+    font-size: 0.68rem;
+  }
+
+  .wallpaper-card-actions {
+    gap: 6px;
+  }
+
+  .card-preview-button,
+  .card-download-button {
+    padding: 9px 7px;
+    font-size: 0.75rem;
+  }
+
+  .wallpaper-badge {
+    top: 8px;
+    left: 8px;
+    padding: 5px 8px;
+    font-size: 0.65rem;
+  }
+
+  .favorite-button {
+    top: 8px;
+    right: 8px;
+    width: 31px;
+    height: 31px;
+  }
+
+  .gallery-controls {
+    gap: 8px;
+  }
+
+  .select-control {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .preview-dialog {
+    width: calc(100% - 20px);
+    max-height: 90vh;
+    border-radius: 16px;
+  }
+
+  .preview-image-panel {
+    min-height: 220px;
+    padding: 12px;
+  }
+
+  .preview-details {
+    gap: 13px;
+    padding: 16px;
+  }
+
+  .preview-information {
+    gap: 8px;
+  }
+
+  .preview-info-item {
+    padding: 10px;
+  }
+
+  .preview-actions {
+    flex-direction: column;
+  }
+
+  .preview-actions .primary-button,
+  .preview-actions .secondary-button {
+    width: 100%;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    gap: 14px;
+  }
+
+  .toast {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    max-width: none;
+  }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
